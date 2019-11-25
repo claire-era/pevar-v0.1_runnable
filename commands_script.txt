@@ -1,0 +1,9 @@
+// delete contents of DATAFRAME.hmp.txt
+// PEVAR V.1.0 COMMAND LINE EXECUTION OF COMMANDS
+
+#PRE-PROCESSING of DATA
+python PREPROCESS_FILES.py
+
+for %f in (*) do ( java -jar pevar_v1_verbose.jar %f PEDIGREE_FILE.txt ) >> results_verbose.log
+
+python process_output.py >> results_non_verbose.txt
