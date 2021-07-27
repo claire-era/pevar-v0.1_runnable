@@ -1,8 +1,8 @@
-# PEVAR V.1.0 (latest: Nov. 25, 2019)
+## PEVAR V.1.0 (last updated: Nov. 25, 2019)
 Version 1.0 is solely the PEVAR (.jar) file, without integration to TASSEL5. This is solely run inside the CLI as 
 ## Currently run in Windows 10 (64-bit)
 
-## Preliminaries
+### Preliminaries
 User must have Python 3, Java JDK (at least v8) to run .jar files, and R.\
 As of v1.0, PEVAR can only process one group at a time. Batch processing is to be implemented soon.
 
@@ -16,18 +16,17 @@ These are the data needed:
 * `data_information.txt` - csv file containing the information of the HapMap file (strictly hardcoded)
 * `pedigree_file.txt` - csv file containing the groupings of the HapMap file (strictly hardcoded)
 
-The python script is hardcoded, 
 Output: Group files are __currently__ stored inside the current directory. Refreshing the folder will yield the group separated files. \
 Important: If the python file will be run again, delete `DATAFRAME.hmp.txt` before executing the file. Failure to do this step will result to errors.
 
 ### Execution of Commands
-Step 1: Preprocessing - Split the whole combined file into separate individual files.
+Step 1: Preprocessing - Split the whole combined file into separate individual files.\
 $ `python PREPROCESS_FILES.py` </br>
 
-Step 2: Run PEVAR to all of the separated files. Append results to results_verbose.log.
+Step 2: Run PEVAR to all of the separated files. Append results to results_verbose.log.\
 $ `for %f in (*) do ( java -jar pevar_v1.jar %f pedigree_file.txt ) >> results_verbose.log` </br>
 
-Step 3: Run against precision checks.
+Step 3: Process output file for readibility.\
 $ `python process_output.py >> results_non_verbose.txt`
 
 Where `results_non_verbose.txt` contains the recall and precision values of the program.
