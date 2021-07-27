@@ -1,6 +1,5 @@
 ## PEVAR V.1.0 (last updated: Nov. 25, 2019)
-Version 1.0 is solely the PEVAR (.jar) file, without integration to TASSEL5. This is solely run inside the CLI as 
-## Currently run in Windows 10 (64-bit)
+Version 1.0 is solely the PEVAR (.jar) file, __without integration to TASSEL5__. PEVAR is already packed as a JAR executable ready to be run on a HapMap file. This is run in Windows 10 (64-bit).
 
 ### Preliminaries
 User must have Python 3, Java JDK (at least v8) to run .jar files, and R.\
